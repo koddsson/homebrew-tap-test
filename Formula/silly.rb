@@ -10,14 +10,10 @@ class Silly < Formula
   license 'BSD-3-Clause'
 
   def install
-    ohai "In install!"
-    system "whoami"
-    bin.install 'tap-test'
+    bin.install 'tap-test' => 'cook'
   end
 
   test do
-    ohai "In test!"
-    system "whoami"
     assert_equal 'Hello!', shell_output("#{bin}/tap-test").strip
   end
 end

@@ -11,13 +11,13 @@ class Silly < Formula
 
   def install
     ohai "In install!"
-    system "sudo", "whoami"
+    system "whoami"
     bin.install 'tap-test'
   end
 
   test do
     ohai "In test!"
-    system "sudo", "whoami"
+    system "whoami"
     assert_equal 'Hello!', shell_output("#{bin}/tap-test").strip
   end
 end
